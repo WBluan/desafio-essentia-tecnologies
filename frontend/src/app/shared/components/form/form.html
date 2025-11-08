@@ -1,3 +1,8 @@
-<form class="app-form" [ngStyle]="{ 'gap': gap, 'align-items': align }">
+<form
+  class="app-form"
+  [ngStyle]="{ 'gap': gap, 'align-items': align }"
+  [formGroup]="formGroup"
+  (ngSubmit)="submitted.emit()"
+>
   <ng-content></ng-content>
 </form>

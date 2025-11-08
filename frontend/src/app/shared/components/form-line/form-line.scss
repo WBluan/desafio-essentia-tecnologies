@@ -1,0 +1,17 @@
+.form-line {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  margin-bottom: 1rem;
+  width: 100%;
+
+  label {
+    font-weight: 600;
+    font-size: 1.0rem;
+    color: #0E0104;
+  }
+
+  ::ng-deep input {
+    width: 100%;
+  }
+}

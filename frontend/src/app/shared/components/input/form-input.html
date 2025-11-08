@@ -1,0 +1,11 @@
+<div class="custom-input-wrapper">
+  <input 
+    [type]="type"
+    [placeholder]="placeholder"
+    [value]="value"
+    [disabled]="disabled"
+    (input)="onChange($event.target.value)"
+    (blur)="onTouched()"
+    class="custom-input"
+  />
+</div>

@@ -1,0 +1,27 @@
+:host {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.custom-input-wrapper {
+  width: 100%;
+  display: block;
+  box-sizing: border-box;
+}
+
+.custom-input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: #F1E7EA;
+  outline: none;
+  transition: border 0.2s ease;
+
+  &:focus {
+    border-color: #E67A9A;
+  }
+}

@@ -50,7 +50,25 @@
 }
 
 .todo-list-container {
-  width: 50%;
+  width: 100%;
+  max-width: 720px;       
+  flex: 1;                
+  overflow-y: auto;       
+  padding-right: 0.5rem;  
+  margin-top: 0.5rem;
+}
+
+.todo-list-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.todo-list-container::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+}
+
+.todo-list-container::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.35);
 }
 
 .todo-footer {

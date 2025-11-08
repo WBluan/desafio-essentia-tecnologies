@@ -1,0 +1,8 @@
+# Dependências e builds do Node.js
+node_modules/
+dist/
+.env
+*.log
+*.local
+coverage/
+.tmp/

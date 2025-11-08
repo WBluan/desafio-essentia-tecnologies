@@ -1,3 +1,5 @@
+@use "sass:color";
+
 .text-link {
   margin-top: 1rem;
   font-weight: 400;
@@ -30,7 +32,7 @@
     transition: color 0.2s ease;
 
     &:hover {
-      color: darken(#800a58, 10%);
+      color: color.adjust(#800a58, $lightness: -10%);
     }
   }
 }

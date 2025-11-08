@@ -1,7 +1,11 @@
+:host {
+  display: block;
+  margin: 0;
+}
+
 .app-title {
-  font-size: 1.8rem;
+  font-size: 1.9rem;
   font-weight: 700;
-  margin-bottom: 0.5rem;
-  text-align: center;
-  color: #0E0104;
+  margin: 0;
+  line-height: 1.05;
 }

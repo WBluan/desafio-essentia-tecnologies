@@ -1,6 +1,11 @@
+:host {
+  display: block;
+  margin: 0;
+}
+
 .app-subtitle {
-  font-size: 1rem;
-  color: #0E0104;
-  margin-bottom: 1.5rem;
-  text-align: center;
+  font-size: 1.05rem;
+  margin: 0;   /* remove espaço extra */
+  margin-top: 4px; /* pequeno espaçamento apenas se quiser */
+  opacity: 0.85;
 }

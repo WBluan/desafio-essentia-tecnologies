@@ -4,7 +4,7 @@
     <app-subtitle text="Faça login para continuar"></app-subtitle>
   </div>
 
-  <app-form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <app-form [formGroup]="form" (ngSubmit)="onSubmit()" class="login-form">
     <app-form-line label="E-mail">
       <custom-input formControlName="email" placeholder="Digite seu e-mail" ></custom-input>
     </app-form-line>

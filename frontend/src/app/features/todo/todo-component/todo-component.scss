@@ -2,29 +2,55 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.2rem;
-  height: 90%;
-  width: 90%;
+  justify-content: flex-start;
+  height: 100%;
+  width: 100%;
+  gap: 0.8rem;
+  padding: 1rem 0; 
+  box-sizing: border-box;
 }
 
 .todo-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
   margin-bottom: 0.2rem;
+  gap: 2px;
+}
 
-  app-title {
-    margin-bottom: 0.25rem;
-  }
+.todo-header app-title,
+.todo-header app-subtitle {
+  margin: 0;
+}
+
+.app-title {
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: #0E0104;
+  margin: 0;
+}
+
+.app-subtitle {
+  font-size: 1.05rem;
+  color: #0E0104;
+  opacity: 0.8;
+  margin: 0;
 }
 
 .todo-form {
   width: 100%;
   display: flex;
   justify-content: center;
+}
 
-  app-input-todo {
-    width: 100%;
-    max-width: 600px;
-  }
+.todo-form app-input-todo {
+  width: 100%;
+  max-width: 720px;
+}
+
+.todo-list-container {
+  width: 50%;
 }
 
 .todo-footer {
@@ -33,11 +59,13 @@
   flex-direction: column;
   align-items: center;
   gap: 0.4rem;
-  font-size: 0.9rem;
+  font-size: 0.86rem;
   color: #3e2e32;
+  padding-top: 0.5rem;
+}
 
-  app-button {
-    width: 160px;
-    font-size: 0.85rem;
-  }
+.todo-footer app-button {
+  width: 140px;
+  font-size: 0.82rem;
+  padding: 0.45rem 0.75rem;
 }

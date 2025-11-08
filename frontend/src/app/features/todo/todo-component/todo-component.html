@@ -1,20 +1,22 @@
 
-<app-page contentMaxWidth="80%" contentMaxHeight="80%">
+<app-page contentMaxWidth="90%" contentMaxHeight="90%">
     <div class="todo-container">         
         <div class="todo-header">
             <app-title text="TechX To-Do List"></app-title>
             <app-subtitle text="Crie e gerencie suas tarefas"></app-subtitle>
         </div>
-
+        
         <div class="todo-form">
             <app-input-todo (add)="addTodo($event)"></app-input-todo>
         </div>
         
-        <app-todo-list
-            [todos]="todos"
-            (delete)="deleteTodo($event)"
-        >
-        </app-todo-list>
+        <div class="todo-list-container">
+            <app-todo-list
+                [todos]="todos"
+                (delete)="deleteTodo($event)"
+            >
+            </app-todo-list>
+        </div>
 
         <div class="todo-footer">
             <span>Você tem {{ todos.length }} tarefas pendentes</span>

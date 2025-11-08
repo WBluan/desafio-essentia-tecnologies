@@ -4,12 +4,16 @@
         <app-subtitle text="Preencha os campos e crie sua conta"></app-subtitle>
     </div>
 
-    <app-form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <app-form [formGroup]="form" [gap]="'0.5rem'" (ngSubmit)="onSubmit()" class="register-form">
         <app-form-line label="E-mail">
             <custom-input formControlName="email" placeholder="Digite seu e-mail" ></custom-input>
         </app-form-line>
         <app-form-line label="Senha">
             <custom-input formControlName="password" type="password" placeholder="Digite sua senha" ></custom-input>
+        </app-form-line>
+
+        <app-form-line label="Confirmar Senha">
+            <custom-input formControlName="password" type="password" placeholder="Confirme sua senha" ></custom-input>
         </app-form-line>
 
         <app-button type="submit" label="Cadastrar-se"></app-button>

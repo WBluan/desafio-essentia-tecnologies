@@ -1,0 +1,10 @@
+
+<div class="list">
+    @for (todo of todos; track todo.id) {
+        <app-todo-item
+            [todo]="todo"
+            (delete)="delete.emit($event)"
+        >
+        </app-todo-item>
+    }
+</div>

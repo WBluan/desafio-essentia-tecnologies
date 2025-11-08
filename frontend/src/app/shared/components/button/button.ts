@@ -1,5 +1,4 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
-
 @Component({
   selector: 'app-button',
   imports: [],
@@ -9,11 +8,12 @@ import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from 
 })
 export class Button {
   @Input() label = '';
+  @Input() icon?: string;
   @Input() type: 'button' | 'submit' = 'button';
   @Input() disabled = false;
   @Output() action = new EventEmitter<void>();
 
-  onCLick(): void {
-    if(!this.disabled) this.action.emit
+  onClick(): void {
+    if(!this.disabled) this.action.emit();
   }
 }

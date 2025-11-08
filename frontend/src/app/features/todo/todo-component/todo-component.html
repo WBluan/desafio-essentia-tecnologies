@@ -1,0 +1,23 @@
+
+<app-page>
+    <div class="todo-header">
+        <app-title text="TechX To-Do List"></app-title>
+        <app-subtitle text="Crie e gerencie suas tarefas"></app-subtitle>
+    </div>
+
+    <app-input-todo (add)="addTodo($event)"></app-input-todo>
+    
+    <app-todo-list
+        [todos]="todos"
+        (delete)="deleteTodo($event)"
+    >
+    </app-todo-list>
+
+    <div class="footer">
+        <span>Você tem {{ todos.length }} tarefas pendentes</span>
+        <app-button
+            label="Limpar Tudo"
+            (action)="clearAll()"
+        ></app-button>
+    </div>
+</app-page>

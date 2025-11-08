@@ -1,0 +1,21 @@
+.app-btn {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background: #643C48;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s ease;
+
+    &:hover {
+        background: #E960B9;
+    }
+
+    &:disabled {
+        background: #ccc;
+        cursor: not-allowed;
+    }
+}

@@ -1,4 +1,8 @@
-<app-form [formGroup]="form" (submitted)="onSubmit()" gap="1rem" align="center">
+<form
+  class="input-todo-form"
+  [formGroup]="form"
+  (ngSubmit)="onSubmit()"
+>
   <custom-input
     formControlName="text"
     placeholder="Add your new Todo"
@@ -9,4 +13,4 @@
     type="submit"
     icon="➕">
   </app-button>
-</app-form>
+</form>

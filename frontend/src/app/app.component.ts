@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { LoginForm } from './features/auth/login/login-form';
+import { LoginForm } from './features/auth/components/login/login-form';
 import { RouterOutlet } from '@angular/router';
 
 @Component({

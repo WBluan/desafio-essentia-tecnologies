@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { ShareModules } from '../../../../shared/shared.module';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
+import { ToastService } from '../../../../shared/services/toast.service';
 
 @Component({
   selector: 'app-register',
@@ -14,7 +15,12 @@ import { Router } from '@angular/router';
 export class Register implements OnInit {
   form: FormGroup;
 
-  constructor(private fb: FormBuilder, private auth: AuthService, private router: Router) {}
+  constructor(
+    private fb: FormBuilder, 
+    private auth: AuthService, 
+    private router: Router,
+    private toast: ToastService
+  ) {}
 
   ngOnInit(): void {
     this.form = this.fb.group({
@@ -36,8 +42,15 @@ export class Register implements OnInit {
     }
 
     this.auth.register(email, password).subscribe({
-      next: () => this.router.navigate(['/todo']),
-      error: err => console.error('Register error', err)
+      next: () => {
+        
+        this.toast.showSuccess('Conta criada com sucesso! Realize seu login.')
+        this.router.navigate(['/login'])
+      },
+      error: (err) => {
+        console.error(err);
+        this.toast.showError('Erro ao criar sua conta. Tente novamente.')
+    }
     })
   }
 }

@@ -4,6 +4,7 @@ import { ShareModules } from '../../../../shared/shared.module';
 import { InputTodo } from "../todo-input/todo-input";
 import { TodoList } from "../todo-list/todo-list";
 import { TodoService } from '../../services/todo.service';
+import { ToastService } from '../../../../shared/services/toast.service';
 
 
 @Component({
@@ -17,7 +18,7 @@ export class TodoComponent implements OnInit {
   loading = false;
   error = "";
 
-  constructor(private todoService: TodoService) {}
+  constructor(private todoService: TodoService, private toast: ToastService) {}
 
   get pendingCount(): number {
   return this.todos.filter(t => !t.completed).length;
@@ -37,6 +38,7 @@ export class TodoComponent implements OnInit {
       error: (err) => {
         this.error = err.message;
         this.loading = false;
+        this.toast.showError('Erro ao carregar tarefas. Tente novamente.')
       }
     });
   }
@@ -51,11 +53,13 @@ export class TodoComponent implements OnInit {
 
     this.todoService.create(newTodo).subscribe({
       next: (created) => {
+        this.toast.showSuccess('Nova tarefa adicionada com sucesso!')
         this.todos.push(created);
         this.loadTodos();
       },
       error: (err) => {
         this.error = err.message;
+        this.toast.showError('Erro ao criar tarefa. Tente novamente.')
       }
     });
   }
@@ -70,8 +74,15 @@ export class TodoComponent implements OnInit {
 editTodo(todo: Todo, newTitle: string) {
   if (!newTitle.trim()) return;
   this.todoService.update(todo.id!, { title: newTitle }).subscribe({
-    next: () => todo.title = newTitle,
-    error: err => console.error(err)
+    next: () => {
+      todo.title = newTitle
+      this.toast.showSuccess('Tarefa editada!')
+    },
+    error: (err) => {
+      this.error = err.message;
+      console.error(err);
+        this.toast.showError('Erro ao editar tarefa. Tente novamente.')
+    }
   });
 }
 
@@ -79,8 +90,13 @@ editTodo(todo: Todo, newTitle: string) {
     this.todoService.delete(id).subscribe({
       next: () => {
         this.todos = this.todos.filter(todo => todo.id !== id);
+        this.toast.showSuccess('Tarefa excluída comn sucesso.')
       },
-      error: (err) => this.error = err.message
+      error: (err) => {
+        this.error = err.message;
+        console.error(err);
+        this.toast.showError('Erro ao deletar tarefa. Tente novamente.')
+    }
     });
   }
 

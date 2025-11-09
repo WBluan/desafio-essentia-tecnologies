@@ -4,6 +4,7 @@ import { FormInput } from '../../../../shared/components/input/form-input';
 import { ShareModules } from '../../../../shared/shared.module';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
+import { ToastService } from '../../../../shared/services/toast.service';
 
 @Component({
   selector: 'app-login-form',
@@ -14,7 +15,12 @@ import { Router } from '@angular/router';
 export class LoginForm implements OnInit {
   form: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private auth: AuthService, private router: Router) {}
+  constructor(
+    private formBuilder: FormBuilder, 
+    private auth: AuthService, 
+    private router: Router,
+    private toast: ToastService
+  ) {}
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({
@@ -27,11 +33,16 @@ export class LoginForm implements OnInit {
     if (!this.form.valid) {
       return this.form.markAllAsTouched();
     }
+    
+  this.toast.showSuccess('Usuário autenticado.');
 
     const { email, password } = this.form.value;
     this.auth.login(email, password).subscribe({
       next: () => this.router.navigate(['/todo']),
-      error: err => console.error('login error', err)
+      error: (err) => {
+      console.error(err);
+      this.toast.showError('Erro ao entrar no sistema. Tente novamente.')
+    }
     })
   }
 }

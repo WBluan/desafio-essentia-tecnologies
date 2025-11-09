@@ -7,3 +7,20 @@
   border-radius: 6px;
   margin-bottom: 0.4rem;
 }
+
+.item-buttons {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.item-checkbox-title {
+  display: flex;
+  gap: 0.5rem;
+  width: 80%;
+}
+
+.todo-checkbox {
+  height: 18px;
+  width: 18px;
+}

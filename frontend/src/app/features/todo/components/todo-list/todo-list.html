@@ -1,6 +1,6 @@
 <div class="list">
   <app-todo-item
-    *ngFor="let todo of todos"
+    *ngFor="let todo of sortedTodos; trackBy: trackById"
     [todo]="todo"
     (delete)="delete.emit($event)"
     (toggleComplete)="toggleComplete.emit({ todo, completed: $event.completed })"

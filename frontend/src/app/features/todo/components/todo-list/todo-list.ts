@@ -15,6 +15,10 @@ export class TodoList {
   @Output() toggleComplete = new EventEmitter<{ todo: Todo, completed: boolean }>();
   @Output() saveEdit = new EventEmitter<{ todo: Todo, title: string }>();
 
+  get sortedTodos(): Todo[] {
+    return [...this.todos].sort((a, b) => Number(a.completed) - Number(b.completed));
+  }
+
   trackById(index: number, todo: Todo) {
     return todo.id;
   }

@@ -19,6 +19,10 @@ export class TodoComponent implements OnInit {
 
   constructor(private todoService: TodoService) {}
 
+  get pendingCount(): number {
+  return this.todos.filter(t => !t.completed).length;
+  }
+
   ngOnInit(): void {
     this.loadTodos();
   }
@@ -70,7 +74,6 @@ editTodo(todo: Todo, newTitle: string) {
     error: err => console.error(err)
   });
 }
-
 
   deleteTodo(id: number) {
     this.todoService.delete(id).subscribe({

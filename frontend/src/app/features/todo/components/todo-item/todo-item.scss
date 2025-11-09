@@ -6,6 +6,17 @@
   padding: 0.3rem 1rem;
   border-radius: 6px;
   margin-bottom: 0.4rem;
+  transition: opacity 0.2s ease, background-color 0.2s ease;
+
+  &.completed {
+    opacity: 0.6; // deixa o item mais "apagado"
+    background: #e3e3e3;
+
+    .todo-title {
+      text-decoration: line-through; // risco no texto
+      color: #888; // cor mais suave
+    }
+  }
 }
 
 .item-buttons {
@@ -19,6 +30,10 @@
   gap: 0.5rem;
   width: 80%;
   align-items: center;
+}
+
+.todo-title {
+  transition: color 0.2s ease, text-decoration 0.2s ease;
 }
 
 .todo-checkbox {

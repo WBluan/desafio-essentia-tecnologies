@@ -1,0 +1,10 @@
+<label class="custom-checkbox-wrapper">
+  <input
+    type="checkbox"
+    class="custom-checkbox-input"
+    [checked]="checked"
+    [disabled]="disabled"
+    (change)="onToggle($event)"
+  />
+  <span class="custom-checkbox-box"></span>
+</label>

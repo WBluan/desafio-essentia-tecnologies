@@ -1,14 +1,14 @@
 <div class="todo-item" [class.completed]="todo.completed">
   <div class="item-checkbox-title">
-    <input type="checkbox"
-    [checked]="todo.completed"
-    (change)="toggleComplete.emit($event.target.checked)"
-    class="todo-checkbox" />
-    
+    <app-custom-checkbox
+      [checked]="todo.completed"
+      (change)="toggleComplete.emit($event)"
+    ></app-custom-checkbox>
+
     <ng-container *ngIf="!editing; else editTemplate">
-      <span>{{ todo.title }}</span>
+      <span class="todo-title">{{ todo.title }}</span>
     </ng-container>
-    
+
     <ng-template #editTemplate>
       <custom-input [(ngModel)]="editTitle" class="edit-input" />
     </ng-template>

@@ -1,5 +1,5 @@
 import { NgModule } from "@angular/core";
-import { TodoComponent } from "./todo-component/todo-component";
+import { TodoComponent } from "./components/todo-component/todo-component";
 
 @NgModule({
     imports: [TodoComponent],

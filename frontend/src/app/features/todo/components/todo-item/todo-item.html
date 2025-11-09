@@ -1,4 +1,32 @@
-<div class="todo-item">
-  <span>{{ todo.title }}</span>
-  <app-button [icon]="'delete'" color="red" (click)="onDelete()"></app-button>
+<div class="todo-item" [class.completed]="todo.completed">
+  <div class="item-checkbox-title">
+    <input type="checkbox"
+    [checked]="todo.completed"
+    (change)="toggleComplete.emit($event.target.checked)"
+    class="todo-checkbox" />
+    
+    <ng-container *ngIf="!editing; else editTemplate">
+      <span>{{ todo.title }}</span>
+    </ng-container>
+    
+    <ng-template #editTemplate>
+      <custom-input [(ngModel)]="editTitle" class="edit-input" />
+    </ng-template>
+  </div>
+
+  <div class="item-buttons">
+    <app-button
+      [icon]="editing ? 'save' : 'edit'"
+      (click)="editing ? saveEdit.emit(editTitle) : startEdit()"
+      type="button"
+      class="small-btn"
+    ></app-button>
+
+    <app-button
+      [icon]="'delete'"
+      (click)="onDelete()"
+      type="button"
+      class="small-btn"
+    ></app-button>
+  </div>
 </div>

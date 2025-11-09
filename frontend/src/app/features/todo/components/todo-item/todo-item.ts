@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Todo } from '../todo-model/todo.model';
-import { Button } from "../../../shared/components/button/button";
+import { Todo } from '../../model/todo.model';
+import { Button } from "../../../../shared/components/button/button";
 
 @Component({
   selector: 'app-todo-item',

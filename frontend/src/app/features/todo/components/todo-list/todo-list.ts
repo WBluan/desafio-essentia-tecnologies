@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Todo } from '../todo-model/todo.model';
+import { Todo } from '../../model/todo.model';
 import { TodoItem } from "../todo-item/todo-item";
 
 @Component({
@@ -11,4 +11,8 @@ import { TodoItem } from "../todo-item/todo-item";
 export class TodoList {
   @Input() todos: Todo[] = [];
   @Output() delete = new EventEmitter<number>();
+
+  trackById(todo: Todo) {
+    return todo.id;
+  }
 }

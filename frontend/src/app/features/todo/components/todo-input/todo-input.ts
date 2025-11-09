@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { FormInput } from "../../../shared/components/input/form-input";
-import { Button } from "../../../shared/components/button/button";
+import { FormInput } from '../../../../shared/components/input/form-input';
+import { Button } from '../../../../shared/components/button/button';
 
 @Component({
   selector: 'app-input-todo',

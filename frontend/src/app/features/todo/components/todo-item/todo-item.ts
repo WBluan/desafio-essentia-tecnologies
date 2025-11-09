@@ -30,4 +30,9 @@ export class TodoItem {
     this.editing = true;
     this.editTitle = this.todo.title;
   }
+
+  save() {
+    this.saveEdit.emit(this.editTitle)
+    this.editing = false;
+  }
 }

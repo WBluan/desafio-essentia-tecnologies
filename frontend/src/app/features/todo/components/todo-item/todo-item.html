@@ -17,7 +17,7 @@
   <div class="item-buttons">
     <app-button
       [icon]="editing ? 'save' : 'edit'"
-      (click)="editing ? saveEdit.emit(editTitle) : startEdit()"
+      (click)="editing ? save() : startEdit()"
       type="button"
       class="small-btn"
     ></app-button>

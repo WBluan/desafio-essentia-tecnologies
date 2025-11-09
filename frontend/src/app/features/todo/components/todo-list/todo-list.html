@@ -1,8 +1,9 @@
 <div class="list">
   <app-todo-item
-    *ngFor="let todo of todos; trackBy: trackById"
+    *ngFor="let todo of todos"
     [todo]="todo"
     (delete)="delete.emit($event)"
-  >
-  </app-todo-item>
+    (toggleComplete)="toggleComplete.emit({ todo, completed: $event })"
+    (saveEdit)="saveEdit.emit({ todo, title: $event })"
+  ></app-todo-item>
 </div>

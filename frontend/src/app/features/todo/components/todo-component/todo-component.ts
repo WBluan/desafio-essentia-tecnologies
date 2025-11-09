@@ -56,6 +56,22 @@ export class TodoComponent implements OnInit {
     });
   }
 
+  toggleComplete(todo: Todo, completed: boolean) {
+  this.todoService.update(todo.id!, { completed }).subscribe({
+    next: () => todo.completed = completed,
+    error: err => console.error(err)
+  });
+}
+
+editTodo(todo: Todo, newTitle: string) {
+  if (!newTitle.trim()) return;
+  this.todoService.update(todo.id!, { title: newTitle }).subscribe({
+    next: () => todo.title = newTitle,
+    error: err => console.error(err)
+  });
+}
+
+
   deleteTodo(id: number) {
     this.todoService.delete(id).subscribe({
       next: () => {

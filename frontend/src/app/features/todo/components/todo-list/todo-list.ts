@@ -12,6 +12,8 @@ import { CommonModule } from '@angular/common';
 export class TodoList {
   @Input() todos: Todo[] = [];
   @Output() delete = new EventEmitter<number>();
+  @Output() toggleComplete = new EventEmitter<{ todo: Todo, completed: boolean }>();
+  @Output() saveEdit = new EventEmitter<{ todo: Todo, title: string }>();
 
   trackById(index: number, todo: Todo) {
     return todo.id;

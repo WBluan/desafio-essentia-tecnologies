@@ -14,8 +14,9 @@
             <app-todo-list
                 [todos]="todos"
                 (delete)="deleteTodo($event)"
-            >
-            </app-todo-list>
+                (toggleComplete)="toggleComplete($event.todo, $event.completed)"
+                (saveEdit)="editTodo($event.todo, $event.title)"
+            ></app-todo-list>
         </div>
 
         <div class="todo-footer">

@@ -2,18 +2,32 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Todo } from '../../model/todo.model';
 import { Button } from "../../../../shared/components/button/button";
 import { MatIconModule } from '@angular/material/icon';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { FormInput } from "../../../../shared/components/input/form-input";
 
 @Component({
   selector: 'app-todo-item',
-  imports: [Button, MatIconModule],
+  standalone: true,
+  imports: [Button, MatIconModule, FormsModule, CommonModule, FormInput],
   templateUrl: './todo-item.html',
-  styleUrl: './todo-item.scss',
+  styleUrls: ['./todo-item.scss'],
 })
 export class TodoItem {
   @Input() todo!: Todo;
   @Output() delete = new EventEmitter<number>();
+  @Output() toggleComplete = new EventEmitter<boolean>();
+  @Output() saveEdit = new EventEmitter<string>();
+
+  editing = false;
+  editTitle = '';
 
   onDelete() {
-    this.delete.emit(this.todo.id)
+    this.delete.emit(this.todo.id);
+  }
+
+  startEdit() {
+    this.editing = true;
+    this.editTitle = this.todo.title;
   }
 }

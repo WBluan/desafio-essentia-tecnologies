@@ -16,8 +16,20 @@ export class TodoList {
   @Output() saveEdit = new EventEmitter<{ todo: Todo, title: string }>();
 
   get sortedTodos(): Todo[] {
-    return [...this.todos].sort((a, b) => Number(a.completed) - Number(b.completed));
-  }
+  return [...this.todos].sort((a, b) => {
+    if (a.completed !== b.completed) {
+      return Number(a.completed) - Number(b.completed);
+    }
+
+    if (!a.completed && !b.completed) {
+      const aDate = a.created_at ? new Date(a.created_at).getTime() : a.id;
+      const bDate = b.created_at ? new Date(b.created_at).getTime() : b.id;
+      return bDate - aDate; // mais recentes primeiro
+    }
+
+    return 0;
+  });
+}
 
   trackById(index: number, todo: Todo) {
     return todo.id;

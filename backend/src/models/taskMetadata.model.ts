@@ -1,7 +1,7 @@
 import mongoose, { Schema, Document } from 'mongoose';
 
 export interface ITaskMetadata extends Document {
-  task_id: number; // id do mysql
+  task_id: number; 
   user_id: number;
   created_at: Date;
   updated_at: Date;

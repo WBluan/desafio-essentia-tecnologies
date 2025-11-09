@@ -6,7 +6,7 @@
     class="app-btn"    
 >
     @if (icon) {
-        <span class="btn-icon" [innerHTML]="icon"></span>
+        <mat-icon class="btn-icon">{{ icon }}</mat-icon>
     }
     {{ label }}
 </button>

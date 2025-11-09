@@ -2,11 +2,13 @@ import { Component, EventEmitter, Output } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { FormInput } from '../../../../shared/components/input/form-input';
 import { Button } from '../../../../shared/components/button/button';
+import { MatIconModule } from '@angular/material/icon';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-input-todo',
   standalone: true,
-  imports: [FormInput, Button, ReactiveFormsModule],
+  imports: [CommonModule, FormInput, Button, ReactiveFormsModule, MatIconModule],
   templateUrl: './todo-input.html',
   styleUrl: './todo-input.scss',
 })

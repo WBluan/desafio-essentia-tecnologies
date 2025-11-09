@@ -1,10 +1,11 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Todo } from '../../model/todo.model';
 import { Button } from "../../../../shared/components/button/button";
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-todo-item',
-  imports: [Button],
+  imports: [Button, MatIconModule],
   templateUrl: './todo-item.html',
   styleUrl: './todo-item.scss',
 })

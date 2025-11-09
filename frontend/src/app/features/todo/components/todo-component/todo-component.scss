@@ -50,11 +50,11 @@
 }
 
 .todo-list-container {
-  width: 100%;
-  max-width: 720px;       
+  width: 80%;
+  max-width: 720px;
   flex: 1;                
   overflow-y: auto;       
-  padding-right: 0.5rem;  
+  padding: 0.5rem;  
   margin-top: 0.5rem;
 }
 

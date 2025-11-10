@@ -2,9 +2,18 @@
 <app-page contentMaxWidth="90%" contentMaxHeight="90%">
     <div class="todo-container">         
         <div class="todo-header">
-            <app-title text="TechX To-Do List"></app-title>
-            <app-subtitle text="Crie e gerencie suas tarefas"></app-subtitle>
-        </div>
+         <div class="header-top">
+            <div class="spacer"></div>
+        <app-button 
+            (action)="logout()"
+            [icon]="'logout'"
+            ></app-button>
+  </div>
+
+  <app-title text="TechX To-Do List"></app-title>
+  <app-subtitle text="Crie e gerencie suas tarefas"></app-subtitle>
+</div>
+
         
         <div class="todo-form">
             <app-input-todo (add)="addTodo($event)"></app-input-todo>

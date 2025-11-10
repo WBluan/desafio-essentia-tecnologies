@@ -1,0 +1,29 @@
+<app-page>
+    <div class="form-header">
+        <app-title text="Crie sua conta"></app-title>
+        <app-subtitle text="Preencha os campos e crie sua conta"></app-subtitle>
+    </div>
+
+    <app-form [formGroup]="form" [gap]="'0.5rem'" (ngSubmit)="onSubmit()" class="register-form">
+        <app-form-line label="E-mail">
+            <custom-input formControlName="email" placeholder="Digite seu e-mail" ></custom-input>
+        </app-form-line>
+        <app-form-line label="Senha">
+            <custom-input formControlName="password" type="password" placeholder="Digite sua senha" ></custom-input>
+        </app-form-line>
+
+        <app-form-line label="Confirmar Senha">
+            <custom-input formControlName="confirmPassword" type="password" placeholder="Confirme sua senha" ></custom-input>
+        </app-form-line>
+
+        <app-button type="submit" label="Cadastrar-se"></app-button>
+        <div class="link-wrapper">
+            <app-text-link
+                text="Já possuí uma conta?"
+                linkText="Faça Login."
+                route="/login"
+                align="center"
+            ></app-text-link>
+        </div>
+    </app-form>
+</app-page>

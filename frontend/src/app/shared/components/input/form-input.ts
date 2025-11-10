@@ -1,9 +1,9 @@
 import { Component, Input , OnInit, Optional, Injector} from '@angular/core';
-import { ControlValueAccessor, NgControl } from '@angular/forms';
+import { ControlValueAccessor, FormsModule, NgControl } from '@angular/forms';
 
 @Component({
   selector: 'custom-input',
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './form-input.html',
   styleUrl: './form-input.scss',
 })
@@ -34,7 +34,7 @@ export class FormInput implements OnInit, ControlValueAccessor {
   }
 
   writeValue(value: any): void {
-    this.value = value;
+    this.value = value ?? '';
   }
 
   setDisabledState(isDisabled: boolean): void {

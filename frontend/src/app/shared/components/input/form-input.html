@@ -6,6 +6,7 @@
     [disabled]="disabled"
     (input)="onChange($event.target.value)"
     (blur)="onTouched()"
+    [(ngModel)]="value"
     class="custom-input"
   />
 </div>

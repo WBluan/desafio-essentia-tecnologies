@@ -10,6 +10,11 @@
     cursor: pointer;
     transition: background 0.2s ease;
 
+    display: flex;
+    justify-content: center;   
+    align-items: center;       
+    gap: 0.5rem;               
+
     &:hover {
         background: #E960B9;
     }

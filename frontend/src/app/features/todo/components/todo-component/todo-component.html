@@ -1,0 +1,30 @@
+
+<app-page contentMaxWidth="90%" contentMaxHeight="90%">
+    <div class="todo-container">         
+        <div class="todo-header">
+            <app-title text="TechX To-Do List"></app-title>
+            <app-subtitle text="Crie e gerencie suas tarefas"></app-subtitle>
+        </div>
+        
+        <div class="todo-form">
+            <app-input-todo (add)="addTodo($event)"></app-input-todo>
+        </div>
+        
+        <div class="todo-list-container">
+            <app-todo-list
+                [todos]="todos"
+                (delete)="deleteTodo($event)"
+                (toggleComplete)="toggleComplete($event.todo, $event.completed)"
+                (saveEdit)="editTodo($event.todo, $event.title)"
+            ></app-todo-list>
+        </div>
+
+        <div class="todo-footer">
+            <span>Você tem {{ pendingCount }} tarefas pendentes</span>
+            <app-button
+                label="Limpar Tudo"
+                (action)="clearAll()"
+            ></app-button>
+        </div>
+    </div>
+</app-page>

@@ -4,17 +4,23 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #BBA2AA;
-  overflow: hidden; // evita scroll desnecessário
+  background-color: #bba2aa;
+  padding: 1.25rem;
+  box-sizing: border-box;
 }
 
 .page-content {
   width: 100%;
-  max-width: 420px;
+  height: 100%;
+  max-width: 900px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   background: #d8c7cc;
   border-radius: 16px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
   padding: 2rem;
-  box-sizing: border-box;
-  background-color: #d8c7cc;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+  overflow: hidden; 
+  -webkit-font-smoothing: antialiased;
 }

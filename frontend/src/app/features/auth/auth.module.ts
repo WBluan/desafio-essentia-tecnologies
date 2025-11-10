@@ -2,7 +2,7 @@ import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { ReactiveFormsModule } from "@angular/forms";
 import { ShareModules } from "../../shared/shared.module";
-import { LoginForm } from "./login/login-form";
+import { LoginForm } from "./components/login/login-form";
 
 @NgModule({
     imports: [CommonModule, ReactiveFormsModule, ShareModules, LoginForm],

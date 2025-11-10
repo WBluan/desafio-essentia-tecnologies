@@ -10,5 +10,6 @@ import { NgStyle } from '@angular/common';
 })
 export class Page {
   @Input() contentMaxWidth = '480px';
+  @Input() contentMaxHeight = '480px';
   @Input() centered = true;
 }

@@ -1,0 +1,13 @@
+<form class="input-todo-form" [formGroup]="form" (ngSubmit)="onSubmit()">
+  <custom-input
+    formControlName="text"
+    placeholder="Adicione uma nova tarefa"
+    type="text"
+  ></custom-input>
+
+  <app-button
+    type="submit"
+    [icon]="'add'"
+    [attr.aria-label]="'Adicionar todo'"
+  ></app-button>
+</form>

@@ -1,0 +1,42 @@
+.todo-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #eeeaea;
+  padding: 0.3rem 1rem;
+  border-radius: 6px;
+  margin-bottom: 0.4rem;
+  transition: opacity 0.2s ease, background-color 0.2s ease;
+
+  &.completed {
+    opacity: 0.6;
+    background: #e3e3e3;
+
+    .todo-title {
+      text-decoration: line-through; 
+      color: #888;
+    }
+  }
+}
+
+.item-buttons {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.item-checkbox-title {
+  display: flex;
+  gap: 0.5rem;
+  width: 80%;
+  align-items: center;
+}
+
+.todo-title {
+  transition: color 0.2s ease, text-decoration 0.2s ease;
+}
+
+.todo-checkbox {
+  height: 18px;
+  width: 18px;
+}

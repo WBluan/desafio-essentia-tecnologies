@@ -34,5 +34,12 @@ Isso irá iniciar:
 
 **OBS: Tenha certeza que essas portas acima não estão ocupadas!!**
 
+**OBS: Caso ocorra algum erro para fazer registro, peço que espere um pouco e tente novamente, o container do mysql pode demorar um pouco para subir.**
+
+<b>Recomendo monitorar os containers e aguardar todos serem exibidos:</b>
+```bash
+docker ps
+````
+
 ### Acessar a Aplicação
 * Front-End: http://localhost:4200

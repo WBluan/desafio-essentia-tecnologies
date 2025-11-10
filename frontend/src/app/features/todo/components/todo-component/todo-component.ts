@@ -5,20 +5,26 @@ import { InputTodo } from "../todo-input/todo-input";
 import { TodoList } from "../todo-list/todo-list";
 import { TodoService } from '../../services/todo.service';
 import { ToastService } from '../../../../shared/services/toast.service';
+import { AuthService } from '../../services/auth.service';
+import { MatIcon } from "@angular/material/icon";
 
 
 @Component({
   selector: 'app-todo',
   templateUrl: './todo-component.html',
   styleUrls: ['./todo-component.scss'],
-  imports: [ShareModules, InputTodo, TodoList]
+  imports: [ShareModules, InputTodo, TodoList, MatIcon]
 })
 export class TodoComponent implements OnInit {
   todos: Todo[] = [];
   loading = false;
   error = "";
 
-  constructor(private todoService: TodoService, private toast: ToastService) {}
+  constructor(
+    private todoService: TodoService, 
+    private toast: ToastService,
+    private auth: AuthService
+  ) {}
 
   get pendingCount(): number {
   return this.todos.filter(t => !t.completed).length;
@@ -102,5 +108,9 @@ editTodo(todo: Todo, newTitle: string) {
 
   clearAll() {
     this.todos.forEach(todo => this.deleteTodo(todo.id!));
+  }
+
+  logout() {
+    this.auth.logout();
   }
 }

@@ -42,4 +42,6 @@ docker ps
 ````
 
 ### Acessar a Aplicação
-* Front-End: http://localhost:4200
+* Acesse o front-End: http://localhost:4200
+* Crie sua conta na tela /register
+* Realize seu login

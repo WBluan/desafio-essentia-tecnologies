@@ -33,6 +33,7 @@ Isso irá iniciar:
 | **mongo**     | `27017` | Banco de dados NoSQL |
 
 **OBS: Tenha certeza que essas portas acima não estão ocupadas!!**
+**OBS: Caso ocorra algum erro para fazer registro, peço que espere um pouco e tente novamente, o container do mysql pode demorar um pouco para subir.**
 
 ### Acessar a Aplicação
 * Front-End: http://localhost:4200

@@ -7,7 +7,6 @@ Inclui autenticação com JWT, API REST e integração frontend-backend via prox
 Antes de rodar o projeto, você precisa ter instalado:
 - [Docker](https://www.docker.com/get-started)
 - [Docker Compose](https://docs.docker.com/compose/)
-- (opcional) [Node.js 22+](https://nodejs.org/)
 
 
 ##  Configuração e Execução
